@@ -1,12 +1,23 @@
 package student_database_app;
 
+import java.util.Scanner;
+
 public class StudentDatabaseApp {
 
 	public static void main(String[] args) {
-		Student student1 = new Student(); 
-		student1.enroll(); 
-		student1.payTuition();
-		System.out.println(student1.showInfo());
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("How many students you want to Enroll? ");
+		int numnerOfStudents = scanner.nextInt();
+		
+		Student[] students = new Student[numnerOfStudents];
+		
+		for (int i = 0; i < numnerOfStudents; i++) {
+			students[i] = new Student();
+			students[i].enroll(); 
+			students[i].payTuition();
+		}
 	}
 
 }
